@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,85 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsApi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="je7-8h-kyx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="172" id="NS9-ox-jRM" customClass="ExpandingTableViewCell" customModule="NewsApi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="172"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NS9-ox-jRM" id="CC0-CV-az9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L31-RT-W0B">
+                                                    <rect key="frame" x="8" y="8" width="76" height="76"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="76" id="6tc-NR-Got"/>
+                                                        <constraint firstAttribute="width" constant="76" id="ezA-iP-z30"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiger King star Joe Exotic ‘refuses to accept defeat’ after losing zoo to rival Carole Baskin - The Independent" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pn-51-hYB">
+                                                    <rect key="frame" x="92" y="8" width="314" height="76"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlF-mV-MPf">
+                                                    <rect key="frame" x="12" y="92" width="394" height="72"/>
+                                                    <string key="text">He described the news as 'yet another emotional blow' to his 'already fragile' state if I start making this description big hgj g fffhgfhf ggfh gf ghf gf hgf hfgfh</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7Pn-51-hYB" secondAttribute="trailing" constant="8" id="B8X-fD-GdC"/>
+                                                <constraint firstItem="dlF-mV-MPf" firstAttribute="top" secondItem="7Pn-51-hYB" secondAttribute="bottom" constant="8" id="GDm-WV-eQ3"/>
+                                                <constraint firstItem="L31-RT-W0B" firstAttribute="leading" secondItem="CC0-CV-az9" secondAttribute="leading" constant="8" id="JXd-9u-cqa"/>
+                                                <constraint firstItem="7Pn-51-hYB" firstAttribute="leading" secondItem="L31-RT-W0B" secondAttribute="trailing" constant="8" id="OQi-Gg-6Zf"/>
+                                                <constraint firstAttribute="trailing" secondItem="dlF-mV-MPf" secondAttribute="trailing" constant="8" id="Rbr-rn-vIb"/>
+                                                <constraint firstAttribute="bottom" secondItem="dlF-mV-MPf" secondAttribute="bottom" constant="8" id="dy6-jB-SRO"/>
+                                                <constraint firstItem="dlF-mV-MPf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="L31-RT-W0B" secondAttribute="bottom" constant="8" id="hsF-08-vZJ"/>
+                                                <constraint firstItem="7Pn-51-hYB" firstAttribute="top" secondItem="CC0-CV-az9" secondAttribute="top" constant="8" id="uvJ-xh-8fx"/>
+                                                <constraint firstItem="L31-RT-W0B" firstAttribute="top" secondItem="CC0-CV-az9" secondAttribute="top" constant="8" id="xVh-3O-rqI"/>
+                                                <constraint firstItem="dlF-mV-MPf" firstAttribute="leading" secondItem="CC0-CV-az9" secondAttribute="leading" constant="12" id="zM0-VW-us7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDescription" destination="dlF-mV-MPf" id="P9o-qc-XAW"/>
+                                            <outlet property="newsImage" destination="L31-RT-W0B" id="frS-wy-Mfz"/>
+                                            <outlet property="newsTitle" destination="7Pn-51-hYB" id="1yJ-hd-MdZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FnN-cn-xFx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UDs-5d-NDo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="je7-8h-kyx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ct8-mP-MG6"/>
+                            <constraint firstItem="je7-8h-kyx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gLq-iq-vek"/>
+                            <constraint firstItem="je7-8h-kyx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gcc-Qz-dyh"/>
+                            <constraint firstAttribute="bottom" secondItem="je7-8h-kyx" secondAttribute="bottom" id="tWa-ZV-JYs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="je7-8h-kyx" id="3tZ-eq-Xdr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
 </document>
