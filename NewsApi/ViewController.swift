@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var newsArticles: [NSManagedObject] = []
+    let activity = UIActivityIndicatorView(style: .large)
     
     override func awakeFromNib() {
         // Uncomment below line to clear the objects in core data.
@@ -20,16 +21,29 @@ class ViewController: UIViewController {
         self.loadViewIfNeeded()
         fetchDataFromDatabase()
         guard newsArticles.count == 0 else { return }
+        
+        self.tableView.isHidden = true
+        addActivity()
+        
         let services = Service()
         services.downloadData { [weak self] in
             self?.fetchDataFromDatabase()
         }
     }
     
+    func addActivity() {
+        self.view.addSubview(activity)
+        activity.startAnimating()
+        activity.hidesWhenStopped = true
+        activity.translatesAutoresizingMaskIntoConstraints = false
+        activity.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activity.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(self.newsArticles.count > 0)
+        
         
         tableView.rowHeight = UITableView.automaticDimension
 
@@ -68,6 +82,8 @@ class ViewController: UIViewController {
         
         if self.newsArticles.count > 0 {
             tableView.reloadData()
+            activity.removeFromSuperview()
+            tableView.isHidden = false
         }
     }
 }

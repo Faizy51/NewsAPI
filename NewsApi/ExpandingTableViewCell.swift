@@ -16,7 +16,9 @@ class ExpandingTableViewCell: UITableViewCell {
     
     var article: NSManagedObject? {
         didSet {
-            self.newsImage.image = UIImage(data: article?.value(forKey: "imageData") as! Data)?.withRoundedCorners(radius: 75)
+            if let data = article?.value(forKey: "imageData") as? Data {
+                self.newsImage.image = UIImage(data: data)?.withRoundedCorners(radius: 75)
+            }
             self.newsTitle.text = article?.value(forKey: "title") as? String
             self.newsDescription.text = article?.value(forKey: "desc") as? String
         }
